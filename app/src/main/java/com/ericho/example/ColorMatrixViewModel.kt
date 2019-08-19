@@ -29,6 +29,14 @@ class ColorMatrixViewModel(app: Application) : AndroidViewModel(app) {
         imageColorMatrix.set(greenFloatArray.toColorMatrix())
     }
 
+    fun onBtn4Click(view: View) {
+        imageColorMatrix.set(invertColorFloatArray.toColorMatrix())
+    }
+
+    fun onImageClick(view: View) {
+        imageColorMatrix.set(emptyFloatArray.toColorMatrix())
+    }
+
 
     private val redFloatArray = intArrayOf(
         1, 1, 1, 0, 0,
@@ -54,6 +62,18 @@ class ColorMatrixViewModel(app: Application) : AndroidViewModel(app) {
         0.33f, 0.33f, 0.33f, 0f, 0f,
         0f, 0f, 0f, 1f, 0f
     )
+    private val invertColorFloatArray = intArrayOf(
+        -1, 0, 0, 0, 255,
+        0, -1, 0, 0, 255,
+        0, 0, -1, 0, 255,
+        0, 0, 0, 1, 0
+    ).toFloatArray()
 
+    private val emptyFloatArray = intArrayOf(
+        1, 0, 0, 0, 0,
+        0, 1, 0, 0, 0,
+        0, 0, 1, 0, 0,
+        0, 0, 0, 1, 0
+    ).toFloatArray()
     private fun FloatArray.toColorMatrix(): ColorMatrix = ColorMatrix(this)
 }
