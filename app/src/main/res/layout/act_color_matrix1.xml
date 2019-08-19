@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
     <data>
         <variable name="vm" type="com.ericho.example.ColorMatrixViewModel"/>
     </data>
@@ -10,25 +10,28 @@
         android:layout_height="match_parent">
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             android:id="@+id/imageView"
+            tools:srcCompat="@tools:sample/backgrounds/scenic[8]"
             app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
             app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp" android:layout_marginTop="8dp"
             app:layout_constraintTop_toTopOf="parent"
             android:src="@drawable/follow_unknown"
             android:onClick="@{vm::onImageClick}"
+            app:layout_constraintDimensionRatio="4:3"
             app:colorFilterMatrix="@{vm.imageColorMatrix}"/>
         <Button
-            android:text="Button 1"
+            android:text="Red Filter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/button" app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
             app:layout_constraintEnd_toStartOf="@+id/button2" android:layout_marginEnd="8dp"
             android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/imageView"
-            android:onClick="@{vm::onBtn1Click}"/>
+            android:onClick="@{vm::onBtn1Click}"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"/>
         <Button
-            android:text="Button 2"
+            android:text="Blue Filter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/button2" app:layout_constraintEnd_toStartOf="@+id/button3"
@@ -37,7 +40,7 @@
             android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/imageView"
             android:onClick="@{vm::onBtn2Click}"/>
         <Button
-            android:text="Button 3"
+            android:text="Green Filter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/button3" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
@@ -45,7 +48,7 @@
             android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/imageView"
             android:onClick="@{vm::onBtn3Click}"/>
         <Button
-            android:text="Button 4"
+            android:text="Invert Filter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/button4"
