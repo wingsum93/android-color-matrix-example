@@ -5,6 +5,7 @@ import com.facebook.stetho.Stetho
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
+import timber.log.Timber
 
 class App : MultiDexApplication() {
     override fun onCreate() {
@@ -17,6 +18,6 @@ class App : MultiDexApplication() {
             // modules
             modules(appMainModule)
         }
-//        Timber.plant(Timber.DebugTree())
+        Timber.plant(Timber.DebugTree())
     }
 }
