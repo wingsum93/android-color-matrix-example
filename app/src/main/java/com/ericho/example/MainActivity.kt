@@ -3,25 +3,32 @@ package com.ericho.example
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
+import org.jetbrains.anko.startActivity
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var fab: FloatingActionButton
     private lateinit var toolbar: Toolbar
+    private lateinit var textView: TextView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         toolbar = findViewById(R.id.toolbar)
         fab = findViewById(R.id.fab)
+        textView = findViewById(R.id.txv1)
         setSupportActionBar(toolbar)
 
         fab.setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show()
+        }
+        textView.setOnClickListener {
+            startActivity<ColorMatrix1Act>()
         }
     }
 

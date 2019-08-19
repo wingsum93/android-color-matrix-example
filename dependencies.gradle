@@ -18,6 +18,7 @@ ext.versions = [
     coroutines          : '1.2.1',
     koin                : '2.0.1',
     anko                : '0.10.8',
+    mutidex                : '2.0.1',
     // AndroidX
     androidxCore        : '1.0.2',
     androidxKtx: '1.0.1',

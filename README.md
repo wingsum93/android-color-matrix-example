@@ -9,3 +9,7 @@ https://medium.com/better-programming/android-image-color-change-with-colormatri
 ref repo:
 https://github.com/elye/demo_android_lightingcolorfilter?source=post_page-----e927d7fb6eb4----------------------
 
+
+
+Official Color Matrix Java Doc
+https://developer.android.com/reference/android/graphics/ColorMatrix
